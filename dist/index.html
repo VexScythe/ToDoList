@@ -18,27 +18,6 @@
                 <div class="list__box">
                     <h2 class="list__title">Your Lists</h2>
                     <ul class="list__content" data-lists>
-                       <!--  <li class="list__active">
-                            <div class="list">
-                                <p class="list__name">Javascript</p>
-                                <button class="btn"><img class="svg" src="./modify.svg"></button>
-                                <button class="btn"><img class="svg" src="./delete.svg"></button>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list">
-                                <p class="list__name">Html/Css</p>
-                                <button class="btn"><img class="svg" src="./modify.svg"></button>
-                                <button class="btn"><img class="svg" src="./delete.svg"></button>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="list">
-                                <p class="list__name">Projects</p>
-                                <button class="btn"><img class="svg" src="./modify.svg"></button>
-                                <button class="btn"><img class="svg" src="./delete.svg"></button>
-                            </div>
-                        </li> -->
                     </ul>
                     <form class="list__input" action="" data-new-list-form>
                         <input type="text" class="new__list" placeholder="New List" aria-label="new list name" data-new-list-input>
@@ -46,10 +25,10 @@
                     </form>
                 </div>
             </div>
-            <div class="task__section">
-                <div class="task__box">
-                    <h2 class="task__title">Your Tasks</h2>
-                    <div class="task__content">
+            <div class="task__section" data-task-display-container>
+                <div class="task__box" >
+                    <h2 class="task__title" data-task-title>Your Tasks</h2>
+                    <div class="task__content" data-tasks>
                         <div class="task">
                             <div class="priority high__clr"></div>
                             <input type="checkbox" id="task-1">

@@ -7,18 +7,24 @@ import deleteImg from './delete.svg';
 const listsContainer = document.querySelector('[data-lists]');
 const newListForm = document.querySelector('[data-new-list-form]');
 const newListInput = document.querySelector('[data-new-list-input]');
+const taskDisplayContainer = document.querySelector('[data-task-display-container]');
+const taskTitleElement = document.querySelector('[data-task-title]');
+const taskContainer = document.querySelector('[data-tasks]')
+
 
 const LOCAL_STORAGE_LIST_KEY = 'task.lists';
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId';
 let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || [];
 let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY);
 
- listsContainer.addEventListener('click', e => {
+listsContainer.addEventListener('click', e => {
     if (e.target.classList.contains('list__name')){
         selectedListId = e.target.parentElement.parentElement.dataset.listId;
         saveAndRender();
     }
-})
+});
+
+
 
 newListForm.addEventListener("submit", e => {
     e.preventDefault();
@@ -46,6 +52,19 @@ function save () {
 
 function render() {
     clearElement(listsContainer);
+    renderLists();
+    
+    const selectedList = lists.find(list => list.id === selectedListId);
+    if (!selectedListId || !selectedList) {
+        taskTitleElement.innerText = `Your Tasks`;
+        taskContainer.innerHTML = '';
+    }else {
+        console.log(selectedList)
+        taskTitleElement.innerText = `${selectedList.name} - To Do:`;
+    }
+}
+
+function renderLists() {
     lists.forEach(list => {
         const listElement = document.createElement('li');
         listElement.dataset.listId = list.id;
@@ -65,6 +84,10 @@ function render() {
         listDiv.appendChild(btnModify);
         const btnDelete = document.createElement('button');
         btnDelete.classList.add('btn');
+        btnDelete.addEventListener('click', () => {
+            const listId = listElement.dataset.listId;
+            deleteList(listId);
+        });
         listDiv.appendChild(btnDelete);
         const modifySvg = document.createElement('img');
         modifySvg.classList.add('svg');
@@ -83,4 +106,10 @@ function clearElement(element) {
     }
 }
 
+function deleteList(listId) {
+    lists = lists.filter(list => list.id !== listId);
+    saveAndRender();
+}
+
 render();
+
