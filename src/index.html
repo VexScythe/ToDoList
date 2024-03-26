@@ -17,8 +17,8 @@
             <div class="list__section">
                 <div class="list__box">
                     <h2 class="list__title">Your Lists</h2>
-                    <ul class="list__content">
-                        <li class="list__active">
+                    <ul class="list__content" data-lists>
+                       <!--  <li class="list__active">
                             <div class="list">
                                 <p class="list__name">Javascript</p>
                                 <button class="btn"><img class="svg" src="./modify.svg"></button>
@@ -38,10 +38,10 @@
                                 <button class="btn"><img class="svg" src="./modify.svg"></button>
                                 <button class="btn"><img class="svg" src="./delete.svg"></button>
                             </div>
-                        </li>
+                        </li> -->
                     </ul>
-                    <form class="list__input" action="">
-                        <input type="text" class="new__list" placeholder="New List" aria-label="new list name">
+                    <form class="list__input" action="" data-new-list-form>
+                        <input type="text" class="new__list" placeholder="New List" aria-label="new list name" data-new-list-input>
                         <button class="add__btn list__btn"><img class="svg" src="./add.svg"></button>
                     </form>
                 </div>
