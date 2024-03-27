@@ -253,3 +253,55 @@ input[type="checkbox"]:checked + label {
 .svg:hover {
     transform: scale(1.1);
 }
+
+.form__section {
+    display: none;
+    flex-direction: column;
+    border: 1px solid #ededed;
+    position: absolute;
+    background-color: #fafafa;
+    width: 350px;
+    height: 90px;
+    border-radius: 6px;
+    box-shadow: 1px 4px 10px -5px rgba(31,31,31,0.69);
+    top: 30%;
+    left: 270px;
+}
+
+.form__title {
+    background-image: linear-gradient(to right top, #7C05F2, #EE05F2);
+    padding: .5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #fafafa;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.name__input {
+    display: flex;
+    align-items: center;
+    margin-top: .5rem;
+}
+
+.new__name {
+    outline: none;
+    border: none;
+    background-color: transparent;
+    flex: 1;
+    border-bottom: 2px solid #7C05F2;
+    margin: .5rem;
+    transition: border-bottom 250ms ease-in;
+    padding: .2rem
+}
+
+.new__name:focus {
+    border-bottom-width: 3px;
+    border-color: #EE05F2;
+}
+
+.new__name:focus::placeholder {
+    opacity: .2;
+}
