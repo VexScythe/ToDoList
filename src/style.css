@@ -40,6 +40,7 @@
     font-family: 'Exo', sans-serif;
     background-color: #fafafa;
     color: #19191a;
+    background: fixed;
 }
 
 .header {
@@ -64,17 +65,17 @@
     gap: 1rem;
 }
 
-li{
-    z-index: 1;
-}
 .list__section {
     border: 1px solid #ededed;
     border-radius: 6px;
     margin-left: 1rem;
     width: 250px;
+    display: flex;
+    flex-direction: column;
 }
 
 .list__content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     min-height: 200px;
@@ -145,12 +146,15 @@ li{
     border: 1px solid #ededed;
     border-radius: 6px;
     margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .task__content {
     display: flex;
     flex-direction: column;
     min-height: 200px;
+    flex: 1;
 }
 
 .priority {
